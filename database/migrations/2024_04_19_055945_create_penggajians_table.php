@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('penggajians', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal')->default('0000-00-00');
+            $table->date('tanggal');
             $table->foreignId('data_karyawan_id');
             $table->string('gaji_pokok', 20);
             $table->string('total_tunjangan', 20);
