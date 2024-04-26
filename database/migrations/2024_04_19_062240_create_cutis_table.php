@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('from');
             $table->date('to');
             $table->text('note')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

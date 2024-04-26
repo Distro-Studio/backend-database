@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('tgl_keluar')->nullable();
             $table->foreignId('unit_kerja_id')->nullable();
             $table->foreignId('jabatan_id')->nullable();
-            $table->foreignId('profesi_id')->nullable();
+            $table->foreignId('kompetensi_id')->nullable();
             $table->string('uang_lembur', 20)->nullable();
             $table->string('nik')->nullable();
             $table->string('nik_ktp', 16)->nullable();
