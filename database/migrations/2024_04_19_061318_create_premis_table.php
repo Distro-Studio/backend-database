@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('premis', function (Blueprint $table) {
             $table->id();
             $table->string('nama_premi');
+            $table->string('jenis_premi')->nullable();
             $table->string('besaran_premi', 20)->default('0');
-            $table->string('jenis')->nullable();
             $table->timestamps();
         });
     }
