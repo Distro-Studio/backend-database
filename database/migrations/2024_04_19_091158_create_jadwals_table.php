@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ptkps', function (Blueprint $table) {
+        Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_ptkp');
-            $table->foreignId('kategori_ter_id');
+            $table->foreignId('user_id');
+            $table->date('tanggal');
+            $table->foreignId('shift_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->on('users')->references('id');
+            $table->foreign('shift_id')->on('shifts')->references('id');
         });
     }
 
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ptkps');
+        Schema::dropIfExists('jadwals');
     }
 };

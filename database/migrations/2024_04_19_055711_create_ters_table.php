@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kategori_ter_id');
+            $table->foreignId('kategori_ter_id')->constrained('kategori_ters');
             $table->string('from', 20)->default('0');
             $table->string('to', 20)->default('0');
             $table->string('percentage')->default('0');

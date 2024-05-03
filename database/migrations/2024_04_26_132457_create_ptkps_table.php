@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tukar_jadwals', function (Blueprint $table) {
+        Schema::create('ptkps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_pengajuan');
-            $table->foreignId('user_ditukar');
-            $table->foreignId('jadwal_pengajuan');
-            $table->foreignId('jadwal_ditukar');
+            $table->string('kode_ptkp');
+            $table->foreignId('kategori_ter_id')->constrained('kategori_ters');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tukar_jadwals');
+        Schema::dropIfExists('ptkps');
     }
 };

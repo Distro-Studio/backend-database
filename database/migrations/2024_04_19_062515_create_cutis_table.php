@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('cutis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('tipe_cuti_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('tipe_cuti_id')->constrained('tipe_cutis');
             $table->date('from');
             $table->date('to');
             $table->text('note')->nullable();
-            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

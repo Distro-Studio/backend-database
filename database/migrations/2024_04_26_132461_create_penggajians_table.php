@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('penggajians', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
-            $table->foreignId('data_karyawan_id');
+            $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->string('gaji_pokok', 20);
             $table->string('total_tunjangan', 20);
             $table->string('reward',20)->default('0');

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('presensis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->date('tanggal');
-            $table->foreignId('jadwal_id');
+            $table->foreignId('jadwal_id')->constrained('jadwals');
             $table->time('jam_masuk');
             $table->time('jam_keluar');
             $table->string('durasi');

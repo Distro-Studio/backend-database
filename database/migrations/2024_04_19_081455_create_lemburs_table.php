@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('lemburs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('shift_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('shift_id')->constrained('shifts');
             $table->string('kompensasi');
             $table->string('type');
             $table->string('durasi');
