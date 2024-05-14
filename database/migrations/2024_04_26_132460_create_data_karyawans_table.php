@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('data_karyawans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->string('email')->nullable();
             $table->string('no_rm')->nullable();
             $table->string('no_manulife')->nullable();
             $table->date('tgl_masuk')->nullable();
