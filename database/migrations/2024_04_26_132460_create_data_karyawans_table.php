@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
-            $table->string('no_telp', 50)->nullable();
+            $table->string('no_hp', 50)->nullable();
             $table->string('no_bpjsksh', 50)->nullable();
             $table->string('no_bpjsktk', 50)->nullable();
             $table->date('tgl_diangkat')->nullable();
