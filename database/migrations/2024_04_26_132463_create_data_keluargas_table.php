@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->string('nama');
             $table->string('hubungan');
+            $table->string('pendidikan_terakhir');
+            $table->string('status_hidup');
             $table->string('pekerjaan')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('email')->nullable();
