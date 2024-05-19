@@ -19,33 +19,27 @@ class RoleSeeder extends Seeder
 
         $roleSuperAdmin = Role::create([
             'name' => 'Super Admin',
-            'description' => 'drew between importance against attention cookies change tool rhythm merely twelve draw remember pipe handsome policeman mixture hay industrial birthday front himself iron declared',
+            'deskripsi' => 'drew between importance against attention cookies change tool rhythm merely twelve draw remember pipe handsome policeman mixture hay industrial birthday front himself iron declared',
             'created_at' => $created_at,
             'updated_at' => $updated_at,
         ]);
-
-        Role::create([
-            'name' => 'Direktur',
-            'description' => 'provide car sharp pen shall deep owner industry zoo rate eager from tall sudden lamp verb prevent climate silence apart little declared mile gone',
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
-        ]);
-
-        Role::create([
-            'name' => 'Admin',
-            'description' => 'satellites native some bottle blanket extra continued young married lost far great door short quick example tin teeth variety shadow does line met these',
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
-        ]);
-
-        Role::create([
-            'name' => 'Karyawan',
-            'description' => 'recently cream related duty negative spring struck carbon saddle labor damage return court tide blue tea complex foot zoo broken clean been complete conversation',
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
-        ]);
-
+        
         $roleSuperAdmin->givePermissionTo([
+            // Kelola Users Data Karyawan
+            'create.users',
+            'edit.users',
+            'delete.users',
+            'view.users',
+            'import.users',
+            'export.users',
+
+            'create.dataKaryawan',
+            'edit.dataKaryawan',
+            'delete.dataKaryawan',
+            'view.dataKaryawan',
+            'import.dataKaryawan',
+            'export.dataKaryawan',
+
             // Akun
             'create.role',
             'edit.role',
@@ -53,6 +47,10 @@ class RoleSeeder extends Seeder
             'view.role',
             'import.role',
             'export.role',
+
+            'view.permission',
+            'create.permission',
+            'edit.permission',
 
             // Karyawan
             'create.unitkerja',
@@ -99,18 +97,36 @@ class RoleSeeder extends Seeder
             'export.ter21',
 
             'create.jadwalPenggajian',
-            'edit.jadwalPenggajian',
-            'delete.jadwalPenggajian',
-            'view.jadwalPenggajian',
-            'import.jadwalPenggajian',
-            'export.jadwalPenggajian',
+            'reset.jadwalPenggajian',
 
-            'create.runTHR',
-            'edit.runTHR',
-            'delete.runTHR',
-            'view.runTHR',
-            'import.runTHR',
-            'export.runTHR',
+            'create.THR',
+            'edit.THR',
+            'delete.THR',
+            'view.THR',
+            'import.THR',
+            'export.THR',
+
+            // Managemen Waktu
+            'create.shift',
+            'edit.shift',
+            'delete.shift',
+            'view.shift',
+            'import.shift',
+            'export.shift',
+
+            'create.hariLibur',
+            'edit.hariLibur',
+            'delete.hariLibur',
+            'view.hariLibur',
+            'import.hariLibur',
+            'export.hariLibur',
+
+            'create.cuti',
+            'edit.cuti',
+            'delete.cuti',
+            'view.cuti',
+            'import.cuti',
+            'export.cuti',
         ]);
     }
 }

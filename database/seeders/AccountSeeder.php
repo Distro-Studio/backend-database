@@ -16,7 +16,6 @@ class AccountSeeder extends Seeder
     {
         $roleSuperAdmin = User::create([
             'name' => 'Olga Parks',
-            'email' => 'olga@sa.rski.hosp',
             'username' => 'olgaP',
             'data_completion_step' => 1,
             'password' => Hash::make('password'),

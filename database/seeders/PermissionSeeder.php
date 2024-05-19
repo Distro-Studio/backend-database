@@ -13,20 +13,24 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        $kelolaUsers = [
-            'create.user',
-            'edit.user',
-            'delete.user',
-            'view.user',
+        $kelolaUsersData = [
+            'create.users',
+            'edit.users',
+            'delete.users',
+            'view.users',
+            'import.users',
+            'export.users',
 
-            'create.data_karyawan',
-            'edit.data_karyawan',
-            'delete.data_karyawan',
-            'view.data_karyawan',
+            'create.dataKaryawan',
+            'edit.dataKaryawan',
+            'delete.dataKaryawan',
+            'view.dataKaryawan',
+            'import.dataKaryawan',
+            'export.dataKaryawan',
         ];
 
         $kelolaMasterSettings = [
-            // Akun
+            // Pengaturan Akun
             'create.role',
             'edit.role',
             'delete.role',
@@ -34,7 +38,11 @@ class PermissionSeeder extends Seeder
             'import.role',
             'export.role',
 
-            // Karyawan
+            'view.permission',
+            'create.permission',
+            'edit.permission',
+
+            // Pengaturan Karyawan
             'create.unitkerja',
             'edit.unitkerja',
             'delete.unitkerja',
@@ -63,7 +71,7 @@ class PermissionSeeder extends Seeder
             'import.kelompokgaji',
             'export.kelompokgaji',
 
-            // Finance
+            // Pengaturan Finance
             'create.premi',
             'edit.premi',
             'delete.premi',
@@ -79,22 +87,40 @@ class PermissionSeeder extends Seeder
             'export.ter21',
 
             'create.jadwalPenggajian',
-            'edit.jadwalPenggajian',
-            'delete.jadwalPenggajian',
-            'view.jadwalPenggajian',
-            'import.jadwalPenggajian',
-            'export.jadwalPenggajian',
+            'reset.jadwalPenggajian',
 
-            'create.runTHR',
-            'edit.runTHR',
-            'delete.runTHR',
-            'view.runTHR',
-            'import.runTHR',
-            'export.runTHR',
+            'create.THR',
+            'edit.THR',
+            'delete.THR',
+            'view.THR',
+            'import.THR',
+            'export.THR',
+
+            // Pengaturan Managemen Waktu
+            'create.shift',
+            'edit.shift',
+            'delete.shift',
+            'view.shift',
+            'import.shift',
+            'export.shift',
+
+            'create.hariLibur',
+            'edit.hariLibur',
+            'delete.hariLibur',
+            'view.hariLibur',
+            'import.hariLibur',
+            'export.hariLibur',
+
+            'create.cuti',
+            'edit.cuti',
+            'delete.cuti',
+            'view.cuti',
+            'import.cuti',
+            'export.cuti',
         ];
 
-        foreach ($kelolaMasterSettings as $kelolaMasterSetting) {
-            Permission::create(['name' => $kelolaMasterSetting]);
+        foreach (array_merge($kelolaMasterSettings, $kelolaUsersData) as $permission) {
+            Permission::create(['name' => $permission]);
         }
     }
 }
