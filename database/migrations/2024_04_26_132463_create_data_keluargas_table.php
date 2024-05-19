@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('hubungan');
             $table->string('pendidikan_terakhir');
-            $table->string('status_hidup');
+            $table->boolean('status_hidup')->default(false);
             $table->string('pekerjaan')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('email')->nullable();
