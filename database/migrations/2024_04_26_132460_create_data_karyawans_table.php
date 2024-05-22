@@ -30,19 +30,19 @@ return new class extends Migration
             $table->integer('uang_makan')->nullable();
 
             $table->integer('uang_lembur')->nullable();
-            $table->integer('nik')->nullable();
-            $table->integer('nik_ktp')->nullable();
+            $table->string('nik')->nullable();
+            $table->string('nik_ktp', 16)->nullable();
             $table->string('gelar_depan')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
-            $table->integer('no_hp')->nullable();
-            $table->integer('no_bpjsksh')->nullable();
-            $table->integer('no_bpjsktk')->nullable();
+            $table->string('no_hp', 50)->nullable();
+            $table->string('no_bpjsksh', 50)->nullable();
+            $table->string('no_bpjsktk', 50)->nullable();
             $table->date('tgl_diangkat')->nullable();
-            $table->integer('masa_kerja')->nullable();
-            $table->integer('npwp')->nullable();
-            $table->integer('no_rekening')->nullable();
+            $table->string('masa_kerja', 10)->nullable();
+            $table->string('npwp', 50)->nullable();
+            $table->string('no_rekening', 50)->nullable();
             $table->string('jenis_kelamin', 50)->nullable();
             $table->string('agama', 50)->nullable();
             $table->string('golongan_darah', 50)->nullable();
@@ -50,7 +50,7 @@ return new class extends Migration
             $table->integer('berat_badan')->nullable();
             $table->string('no_ijasah')->nullable();
             $table->integer('tahun_lulus')->nullable();
-            $table->integer('no_kk')->nullable();
+            $table->string('no_kk', 20)->nullable();
             $table->string('status_karyawan', 50)->nullable();
             $table->unsignedBigInteger('kelompok_gaji_id')->nullable();
             $table->string('no_str', 16)->nullable();
@@ -59,7 +59,7 @@ return new class extends Migration
             $table->date('masa_berlaku_sip')->nullable();
             $table->unsignedBigInteger('ptkp_id')->nullable();
             $table->date('tgl_berakhir_pks')->nullable();
-            $table->integer('masa_diklat')->nullable();
+            $table->string('masa_diklat', 50)->nullable();
             $table->timestamps();
 
             $table->foreign('kelompok_gaji_id')->on('kelompok_gajis')->references('id');
