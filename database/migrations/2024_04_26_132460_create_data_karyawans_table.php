@@ -37,11 +37,11 @@ return new class extends Migration
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->integer('no_hp')->nullable();
-            $table->string('no_bpjsksh', 50)->nullable();
-            $table->string('no_bpjsktk', 50)->nullable();
+            $table->integer('no_bpjsksh')->nullable();
+            $table->integer('no_bpjsktk')->nullable();
             $table->date('tgl_diangkat')->nullable();
-            $table->string('masa_kerja', 10)->nullable();
-            $table->string('npwp', 50)->nullable();
+            $table->integer('masa_kerja')->nullable();
+            $table->integer('npwp')->nullable();
             $table->integer('no_rekening')->nullable();
             $table->string('jenis_kelamin', 50)->nullable();
             $table->string('agama', 50)->nullable();
@@ -59,7 +59,7 @@ return new class extends Migration
             $table->date('masa_berlaku_sip')->nullable();
             $table->unsignedBigInteger('ptkp_id')->nullable();
             $table->date('tgl_berakhir_pks')->nullable();
-            $table->string('masa_diklat', 50)->nullable();
+            $table->integer('masa_diklat')->nullable();
             $table->timestamps();
 
             $table->foreign('kelompok_gaji_id')->on('kelompok_gajis')->references('id');
