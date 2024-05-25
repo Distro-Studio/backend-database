@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('unit_kerja_tujuan')->constrained('unit_kerjas');
             $table->foreignId('jabatan_asal')->constrained('jabatans');
             $table->foreignId('jabatan_tujuan')->constrained('jabatans');
-            $table->string('tipe')->nullable();
+            $table->string('tipe');
             $table->text('alasan');
             $table->string('dokumen')->nullable();
             $table->timestamps();
