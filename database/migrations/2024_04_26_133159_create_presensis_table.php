@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->foreignId('jadwal_id')->constrained('jadwals');
             $table->timestamp('jam_masuk');
-            $table->timestamp('jam_keluar');
+            $table->timestamp('jam_keluar')->nullable();
             $table->string('durasi');
             $table->string('lat');
             $table->string('long');
