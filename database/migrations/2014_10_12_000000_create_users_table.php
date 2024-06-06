@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('role_id')->nullable();
             $table->string('foto_profil')->nullable();
             $table->boolean('data_completion_step')->default(1);
+            $table->boolean('status_aktif')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

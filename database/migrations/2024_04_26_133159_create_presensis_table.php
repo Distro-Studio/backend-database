@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('durasi');
             $table->string('lat');
             $table->string('long');
-            $table->string('foto');
-            $table->string('absensi'); //(hadir,izin,sakit)
+            $table->string('foto_masuk');
+            $table->string('foto_keluar');
+            $table->string('presensi'); //(hadir,izin,sakit)
             $table->string('kategori');
             $table->timestamps();
         });
