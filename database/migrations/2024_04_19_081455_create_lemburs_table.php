@@ -17,10 +17,9 @@ return new class extends Migration
             $table->foreignId('shift_id')->constrained('shifts');
             $table->date('tgl_pengajuan');
             $table->string('kompensasi');
-            $table->string('type');
+            $table->string('tipe'); //! MASIH RANCU
             $table->string('durasi');
             $table->text('catatan');
-            // $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
