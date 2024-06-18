@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_dinilai')->constrained('users');
             $table->foreignId('user_penilai')->constrained('users');
-            $table->foreignId('unit_kerja_id')->constrained('unit_kerjas');
-            $table->foreignId('jabatan_id')->constrained('jabatans');
+            $table->foreignId('unit_kerja_dinilai')->constrained('unit_kerjas');
+            $table->foreignId('unit_kerja_penilai')->constrained('unit_kerjas');
+            $table->foreignId('jabatan_dinilai')->constrained('jabatans');
+            $table->foreignId('jabatan_penilai')->constrained('jabatans');
             $table->integer('rata_rata');
             $table->timestamps();
         });
