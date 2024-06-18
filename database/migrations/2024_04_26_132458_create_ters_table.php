@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('ptkp_id')->constrained('ptkps');
             $table->integer('from_ter');
             $table->integer('to_ter')->nullable();
-            $table->integer('percentage');
+            $table->decimal('percentage', 4, 2);
             $table->softDeletes();
             $table->timestamps();
         });
