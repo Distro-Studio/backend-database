@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->date('tanggal');
             $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
-            $table->string('gaji_pokok', 20);
-            $table->string('total_tunjangan', 20);
-            $table->string('reward',20)->default('0');
-            $table->string('gaji_bruto', 20)->default('0');
-            $table->string('total_premi',20)->default('0');
-            $table->string('pph21', 20)->default('0');
-            $table->string('take_home_pay', 20)->default('0');
-            $table->string('status')->nullable();
+            $table->integer('gaji_pokok');
+            $table->integer('total_tunjangan');
+            $table->integer('reward');
+            $table->integer('gaji_bruto');
+            $table->integer('total_premi');
+            $table->integer('pph21');
+            $table->integer('take_home_pay');
+            $table->boolean('status_penggajian')->default(1);
             $table->timestamps();
         });
     }

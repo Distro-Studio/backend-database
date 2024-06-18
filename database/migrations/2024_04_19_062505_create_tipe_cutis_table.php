@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->integer('durasi');
             $table->string('waktu')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

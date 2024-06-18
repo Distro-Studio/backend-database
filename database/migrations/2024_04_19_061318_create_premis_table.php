@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_premi');
             $table->boolean('jenis_premi');
             $table->integer('besaran_premi');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
