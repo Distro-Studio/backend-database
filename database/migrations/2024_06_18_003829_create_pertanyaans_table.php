@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('pertanyaans', function (Blueprint $table) {
             $table->id();
             $table->string('pertanyaan');
-            $table->foreignId('jabatan_id')->constrained('jabatans')->nullable();
+            $table->unsignedBigInteger('jabatan_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('jabatan_id')->references('id')->on('jabatans');
         });
     }
 

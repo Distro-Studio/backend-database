@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('penilaians', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('karyawan_menilai_id')->constrained('data_karyawans');
+            $table->foreignId('user_dinilai')->constrained('users');
+            $table->foreignId('user_penilai')->constrained('users');
             $table->foreignId('unit_kerja_id')->constrained('unit_kerjas');
             $table->foreignId('jabatan_id')->constrained('jabatans');
             $table->integer('rata_rata');
