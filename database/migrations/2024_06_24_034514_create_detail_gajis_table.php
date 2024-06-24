@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('premis', function (Blueprint $table) {
+        Schema::create('detail_gajis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_premi');
-            $table->string('sumber_potongan');
-            $table->boolean('jenis_premi');
-            $table->integer('besaran_premi');
-            $table->string('minimal_gaji');
-            $table->string('maksimal_gaji');
-            $table->softDeletes();
+            $table->foreignId('penggajian_id')->constrained('penggajians');
+            $table->string('kategori');
+            $table->string('nama_detail');
+            $table->string('besaran');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('premis');
+        Schema::dropIfExists('detail_gajis');
     }
 };
