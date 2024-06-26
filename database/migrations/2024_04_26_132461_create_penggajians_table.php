@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('penggajians', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal');
+            $table->timestamp('tgl_penggajian');
             $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->integer('gaji_pokok');
             $table->integer('total_tunjangan');
             $table->integer('reward');
             $table->integer('gaji_bruto');
             $table->integer('total_premi');
-            $table->integer('pph21');
+            $table->integer('pph_21');
             $table->integer('take_home_pay');
-            $table->boolean('status_penggajian')->default(1);
+            $table->boolean('status_penggajian')->default(0);
             $table->timestamps();
         });
     }

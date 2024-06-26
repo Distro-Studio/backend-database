@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('kategori');
             $table->string('nama_detail');
             $table->string('besaran');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

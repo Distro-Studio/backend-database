@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('sumber_potongan');
             $table->boolean('jenis_premi');
             $table->integer('besaran_premi');
-            $table->string('minimal_rate')->nullable();
-            $table->string('maksimal_rate')->nullable();
+            $table->integer('minimal_rate')->nullable();
+            $table->integer('maksimal_rate')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

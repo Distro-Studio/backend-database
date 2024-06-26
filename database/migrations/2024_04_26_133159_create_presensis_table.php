@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('presensis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->foreignId('jadwal_id')->constrained('jadwals');
             $table->timestamp('jam_masuk');
             $table->timestamp('jam_keluar')->nullable();
