@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('besaran_premi');
             $table->integer('minimal_rate')->nullable();
             $table->integer('maksimal_rate')->nullable();
+            $table->boolean('has_custom_formula')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

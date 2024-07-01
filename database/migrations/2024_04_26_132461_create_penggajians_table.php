@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('penggajians', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('tgl_penggajian');
+            $table->foreignId('riwayat_penggajian_id')->constrained('riwayat_penggajians');
             $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
+            $table->timestamp('tgl_penggajian');
             $table->integer('gaji_pokok');
             $table->integer('total_tunjangan');
             $table->integer('reward');
