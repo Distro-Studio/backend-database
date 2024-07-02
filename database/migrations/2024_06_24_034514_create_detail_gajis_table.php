@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('penggajian_id')->constrained('penggajians');
             $table->string('kategori');
             $table->string('nama_detail');
-            $table->integer('besaran');
+            $table->integer('besaran')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
