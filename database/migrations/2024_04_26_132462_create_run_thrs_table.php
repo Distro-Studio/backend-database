@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('run_thrs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('thr_id')->constrained('thrs');
-            $table->foreignId('user_id')->constrained('users');
+            // $table->foreignId('thr_id')->constrained('thrs');
+            // $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('data_karyawan_id')->constrained('data_karyawans');
             $table->date('tgl_run_thr');
             $table->timestamps();
         });

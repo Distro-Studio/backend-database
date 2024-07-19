@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tipe_cutis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('durasi');
-            $table->string('waktu')->nullable();
-            $table->string('kategori_cuti');
+            $table->integer('kuota');
+            $table->boolean('is_need_requirement');
+            $table->string('keterangan');
+            $table->boolean('cuti_administratif')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

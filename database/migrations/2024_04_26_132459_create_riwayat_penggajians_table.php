@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('riwayat_penggajians', function (Blueprint $table) {
             $table->id();
-            $table->string('periode');
+            $table->date('periode');
             $table->integer('karyawan_verifikasi');
-            $table->string('status_riwayat_gaji');
+            // $table->foreignId('verifikator_1')->nullable()->constrained('users');
+            // $table->foreignId('verifikator_2')->nullable()->constrained('users');
+            $table->integer('status_riwayat_gaji')->default(1); // 1 = created, 2 = dipublikasi
             $table->timestamps();
         });
     }
