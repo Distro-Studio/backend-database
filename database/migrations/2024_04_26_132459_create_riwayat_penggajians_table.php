@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->date('periode');
             $table->integer('karyawan_verifikasi');
-            // $table->foreignId('verifikator_1')->nullable()->constrained('users');
-            // $table->foreignId('verifikator_2')->nullable()->constrained('users');
             $table->integer('status_riwayat_gaji')->default(1); // 1 = created, 2 = dipublikasi
             $table->timestamps();
         });
