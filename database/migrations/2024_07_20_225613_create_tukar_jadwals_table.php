@@ -17,7 +17,10 @@ return new class extends Migration
             $table->foreignId('jadwal_pengajuan')->constrained('jadwals');
             $table->foreignId('user_ditukar')->constrained('users');
             $table->foreignId('jadwal_ditukar')->constrained('jadwals');
-            $table->boolean('status_penukaran');
+            // $table->boolean('status_penukaran');
+            $table->foreignId('status_penukaran_id')->constrained('status_tukar_jadwals');
+            $table->foreignId('kategori_penukaran_id')->constrained('kategori_tukar_jadwals');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

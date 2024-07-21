@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('berkas', function (Blueprint $table) {
-            $table->string('file_id')->after('user_id');
+        Schema::create('status_lemburs', function (Blueprint $table) {
+            $table->id();
+            $table->string('label');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('berkas', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('status_lemburs');
     }
 };

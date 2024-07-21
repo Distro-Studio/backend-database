@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('riwayat_penggajians', function (Blueprint $table) {
-            $table->foreignId('verifikator_1')->constrained('users')->nullable();
-            $table->foreignId('verifikator_2')->constrained('users')->nullable();
+        Schema::create('kategori_tukar_jadwals', function (Blueprint $table) {
+            $table->id();
+            $table->string('label');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('riwayat_penggajians', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('kategori_tukar_jadwals');
     }
 };

@@ -44,26 +44,29 @@ return new class extends Migration
             $table->string('npwp', 50)->nullable();
             $table->string('no_rekening', 50)->nullable();
             $table->string('jenis_kelamin', 50)->nullable();
-            $table->string('agama', 50)->nullable();
+            
+            // $table->string('agama', 50)->nullable();
+            $table->foreignId('kategori_agama_id')->nullable()->constrained('kategori_agamas');
+
             $table->string('golongan_darah', 50)->nullable();
             $table->integer('tinggi_badan')->nullable();
             $table->integer('berat_badan')->nullable();
             $table->string('no_ijazah')->nullable();
             $table->integer('tahun_lulus')->nullable();
             $table->string('no_kk', 20)->nullable();
-            $table->string('status_karyawan', 50)->nullable();
-            $table->unsignedBigInteger('kelompok_gaji_id')->nullable();
+
+            // $table->string('status_karyawan', 50)->nullable();
+            $table->foreignId('status_karyawan_id')->nullable()->constrained('status_karyawans'); // Tetap, Kontrak, Magang
+
+            $table->foreignId('kelompok_gaji_id')->nullable()->constrained('kelompok_gajis');
             $table->string('no_str', 16)->nullable();
             $table->date('masa_berlaku_str')->nullable();
             $table->string('no_sip', 50)->nullable();
             $table->date('masa_berlaku_sip')->nullable();
-            $table->unsignedBigInteger('ptkp_id')->nullable();
+            $table->foreignId('ptkp_id')->nullable()->constrained('ptkps');
             $table->date('tgl_berakhir_pks')->nullable();
             $table->integer('masa_diklat')->nullable();
             $table->timestamps();
-
-            $table->foreign('kelompok_gaji_id')->on('kelompok_gajis')->references('id');
-            $table->foreign('ptkp_id')->on('ptkps')->references('id');
         });
     }
 

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('role_id')->nullable();
             $table->string('foto_profil')->nullable();
             $table->boolean('data_completion_step')->default(0); // 1 = complete, 0 = not complete
-            $table->boolean('status_akun')->default(1); // 1 = active, 0 = not active
+            $table->boolean('status_aktif')->default(1); // 1 = aktif, 0 = tidak aktif
             $table->rememberToken();
             $table->timestamps();
         });

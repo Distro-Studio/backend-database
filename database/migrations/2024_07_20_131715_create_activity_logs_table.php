@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lemburs', function (Blueprint $table) {
+        Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
+            $table->text('activity');
+            $table->foreignId('kategori_activity_id')->constrained('kategori_activity_logs');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('shift_id')->constrained('shifts');
-            $table->date('tgl_pengajuan');
-            $table->string('kompensasi');
-            $table->string('tipe'); //! MASIH RANCU
-            $table->string('durasi');
-            $table->text('catatan');
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lemburs');
+        Schema::dropIfExists('activity_logs');
     }
 };

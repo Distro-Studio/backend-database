@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('berkas', function (Blueprint $table) {
-            $table->enum('kategori', ['Pribadi', 'Umum', 'System', 'Lain - Lain'])->change();
+        Schema::create('status_karyawans', function (Blueprint $table) {
+            $table->id();
+            $table->string('label');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('berkas', function (Blueprint $table) {
-            $table->enum('kategori', ['Pribadi, Umum'])->change();
-        });
+        Schema::dropIfExists('status_karyawans');
     }
 };

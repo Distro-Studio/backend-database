@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('berkas', function (Blueprint $table) {
+        Schema::create('lemburs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('nama');
-            $table->enum('kategori', ['Pribadi', 'Umum']);
-            $table->string('path');
-            $table->dateTime('tgl_upload');
-            $table->string('nama_file');
-            $table->string('ext')->nullable();
-            $table->string('size')->nullable();
+            $table->foreignId('shift_id')->constrained('shifts');
+            $table->date('tgl_pengajuan');
+            $table->string('kompensasi');
+            $table->string('tipe'); //! MASIH RANCU
+            $table->string('durasi');
+            $table->text('catatan');
+            $table->foreignId('status_lembur_id')->constrained('status_lemburs');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('berkas');
+        Schema::dropIfExists('lemburs');
     }
 };

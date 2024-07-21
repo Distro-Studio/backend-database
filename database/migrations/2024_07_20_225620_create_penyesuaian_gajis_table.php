@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('penyesuaian_gajis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('penggajian_id')->constrained('penggajians');
-            $table->integer('kategori'); // 1 = pengurang, 2 = penambah
+            // $table->integer('kategori');
+            $table->foreignId('kategori_gaji_id')->constrained('kategori_gajis'); // 1 = pengurang, 2 = penambah
             $table->string('nama_detail');
             $table->integer('besaran');
             $table->date('bulan_mulai')->nullable();

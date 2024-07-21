@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_gajis', function (Blueprint $table) {
+        Schema::create('status_cutis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('penggajian_id')->constrained('penggajians');
-            $table->integer('kategori'); // 1 = pengurang, 2 = penambah, 3 = gaji pokok
-            $table->string('nama_detail');
-            $table->integer('besaran')->nullable();
-            $table->softDeletes();
+            $table->string('label');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_gajis');
+        Schema::dropIfExists('status_cutis');
     }
 };
