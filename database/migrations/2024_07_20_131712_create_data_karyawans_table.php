@@ -43,12 +43,15 @@ return new class extends Migration
             $table->integer('masa_kerja')->nullable();
             $table->string('npwp', 50)->nullable();
             $table->string('no_rekening', 50)->nullable();
-            $table->string('jenis_kelamin', 50)->nullable();
+
+            $table->boolean('jenis_kelamin')->nullable();
             
             // $table->string('agama', 50)->nullable();
             $table->foreignId('kategori_agama_id')->nullable()->constrained('kategori_agamas');
 
-            $table->string('golongan_darah', 50)->nullable();
+            // $table->string('golongan_darah', 50)->nullable();
+            $table->foreignId('kategori_darah_id')->nullable()->constrained('kategori_darahs');
+
             $table->integer('tinggi_badan')->nullable();
             $table->integer('berat_badan')->nullable();
             $table->string('no_ijazah')->nullable();
