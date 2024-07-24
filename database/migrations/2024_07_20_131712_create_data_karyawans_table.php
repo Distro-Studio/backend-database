@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('no_rekening', 50)->nullable();
 
             $table->boolean('jenis_kelamin')->nullable();
-            
+
             // $table->string('agama', 50)->nullable();
             $table->foreignId('kategori_agama_id')->nullable()->constrained('kategori_agamas');
 
@@ -54,6 +54,7 @@ return new class extends Migration
 
             $table->integer('tinggi_badan')->nullable();
             $table->integer('berat_badan')->nullable();
+            $table->enum('pendidikan_terakhir', ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'D4', 'S1', 'S2', 'S3'])->nullable();
             $table->string('no_ijazah')->nullable();
             $table->integer('tahun_lulus')->nullable();
             $table->string('no_kk', 20)->nullable();
