@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengumumans', function (Blueprint $table) {
+        Schema::create('kategori_kompensasis', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('konten');
-            $table->boolean('is_read')->default(0); // 0 = unread, 1 = read
+            $table->string('label');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengumumans');
+        Schema::dropIfExists('kategori_kompensasis');
     }
 };

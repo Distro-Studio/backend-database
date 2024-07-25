@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('shift_id')->constrained('shifts');
             $table->date('tgl_pengajuan');
-            $table->string('kompensasi');
+            $table->foreignId('kompensasi_lembur_id')->constrained('kategori_kompensasis');
             $table->string('tipe'); //! MASIH RANCU
             $table->string('durasi');
             $table->text('catatan');

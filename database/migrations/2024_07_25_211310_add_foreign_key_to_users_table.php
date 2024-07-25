@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengumumans', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul');
-            $table->text('konten');
-            $table->boolean('is_read')->default(0); // 0 = unread, 1 = read
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('data_karyawan_id')->after('role_id')->nullable()->constrained('data_karyawans');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengumumans');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['data_karyawan_id']);
+        });
     }
 };
