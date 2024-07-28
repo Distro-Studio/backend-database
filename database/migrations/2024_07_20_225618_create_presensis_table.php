@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('durasi');
             $table->string('lat');
             $table->string('long');
+            $table->string('latkeluar')->nullable();
+            $table->string('longkeluar')->nullable();
             $table->foreignId('foto_masuk')->nullable()->constrained('berkas')->onDelete('cascade');
             $table->foreignId('foto_keluar')->nullable()->constrained('berkas')->onDelete('cascade');
             $table->foreignId('status_presensi_id')->constrained('status_presensis'); //(hadir,izin,sakit)
