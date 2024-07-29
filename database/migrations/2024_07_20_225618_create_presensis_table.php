@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('longkeluar')->nullable();
             $table->foreignId('foto_masuk')->nullable()->constrained('berkas')->onDelete('cascade');
             $table->foreignId('foto_keluar')->nullable()->constrained('berkas')->onDelete('cascade');
-            $table->foreignId('status_presensi_id')->constrained('status_presensis'); //(hadir,izin,sakit)
-            $table->foreignId('kategori_presensi_id')->constrained('kategori_presensis');
+            $table->foreignId('kategori_presensi_id')->constrained('kategori_presensis'); // 'Tepat Waktu', 'Terlambat', 'Absen', 'Cuti'
             $table->timestamps();
         });
     }
