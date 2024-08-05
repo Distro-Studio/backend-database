@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->integer('no_rm')->nullable();
             $table->integer('no_manulife')->nullable();
-            $table->date('tgl_masuk')->nullable();
-            $table->date('tgl_keluar')->nullable();
+            $table->string('tgl_masuk')->nullable();
+            $table->string('tgl_keluar')->nullable();
             $table->foreignId('unit_kerja_id')->constrained('unit_kerjas')->nullable();
             $table->foreignId('jabatan_id')->constrained('jabatans')->nullable();
             $table->foreignId('kompetensi_id')->constrained('kompetensis')->nullable();
@@ -34,12 +34,12 @@ return new class extends Migration
             $table->string('nik_ktp', 16)->nullable();
             $table->string('gelar_depan')->nullable();
             $table->string('tempat_lahir')->nullable();
-            $table->date('tgl_lahir')->nullable();
+            $table->string('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->string('no_hp', 50)->nullable();
             $table->string('no_bpjsksh', 50)->nullable();
             $table->string('no_bpjsktk', 50)->nullable();
-            $table->date('tgl_diangkat')->nullable();
+            $table->string('tgl_diangkat')->nullable();
             $table->integer('masa_kerja')->nullable();
             $table->string('npwp', 50)->nullable();
             $table->string('no_rekening', 50)->nullable();
@@ -64,11 +64,11 @@ return new class extends Migration
 
             $table->foreignId('kelompok_gaji_id')->nullable()->constrained('kelompok_gajis');
             $table->string('no_str', 16)->nullable();
-            $table->date('masa_berlaku_str')->nullable();
+            $table->string('masa_berlaku_str')->nullable();
             $table->string('no_sip', 50)->nullable();
-            $table->date('masa_berlaku_sip')->nullable();
+            $table->string('masa_berlaku_sip')->nullable();
             $table->foreignId('ptkp_id')->nullable()->constrained('ptkps');
-            $table->date('tgl_berakhir_pks')->nullable();
+            $table->string('tgl_berakhir_pks')->nullable();
             $table->integer('masa_diklat')->nullable();
             $table->timestamps();
         });
