@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tgl_to');
             $table->text('catatan')->nullable();
             $table->integer('durasi');
-            $table->foreignId('status_cuti_id')->constrained('status_cutis');
+            $table->foreignId('status_cuti_id')->constrained('status_cutis'); // 1 = menunggu, 2 = disetujui, 3 = ditolak
             $table->timestamps();
         });
     }
