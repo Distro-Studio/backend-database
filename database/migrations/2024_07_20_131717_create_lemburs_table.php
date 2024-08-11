@@ -17,9 +17,10 @@ return new class extends Migration
             $table->foreignId('jadwal_id')->constrained('jadwals');
             $table->string('tgl_pengajuan');
             $table->foreignId('kompensasi_lembur_id')->constrained('kategori_kompensasis');
+            // $table->string('tipe');
             $table->string('durasi');
             $table->text('catatan');
-            $table->foreignId('status_lembur_id')->constrained('status_lemburs');
+            $table->foreignId('status_lembur_id')->constrained('status_lemburs'); // 1 = Menunggu, 2 = Berlangsung, 3 = Selesai
             $table->timestamps();
         });
     }
