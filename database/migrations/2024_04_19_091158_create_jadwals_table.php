@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->string('tgl_mulai');
             $table->string('tgl_selesai')->nullable();
-            $table->foreignId('shift_id')->nullable()->constrained('shifts');
+            $table->unsignedBigInteger('shift_id')->nullable();
             $table->timestamps();
         });
     }
