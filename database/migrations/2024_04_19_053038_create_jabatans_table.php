@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('jabatans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_jabatan');
-            $table->boolean('is_struktural')->default(false);
-            $table->integer('tunjangan');
+            $table->boolean('is_struktural');
+            $table->integer('tunjangan_jabatan');
             $table->softDeletes();
             $table->timestamps();
         });

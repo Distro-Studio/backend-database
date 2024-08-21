@@ -20,6 +20,9 @@ return new class extends Migration
             $table->text('catatan')->nullable();
             $table->integer('durasi');
             $table->foreignId('status_cuti_id')->constrained('status_cutis'); // 1 = menunggu, 2 = disetujui, 3 = ditolak
+            $table->foreignId('verifikator_1')->nullable()->constrained('users');
+            $table->foreignId('verifikator_2')->nullable()->constrained('users');
+            $table->text('alasan')->nullable();
             $table->timestamps();
         });
     }

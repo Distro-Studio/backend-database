@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('data_karyawans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('email')->nullable();
-            $table->integer('no_rm')->nullable();
-            $table->integer('no_manulife')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('no_rm')->nullable();
+            $table->string('no_manulife')->nullable();
             $table->string('tgl_masuk')->nullable();
             $table->string('tgl_keluar')->nullable();
-            $table->foreignId('unit_kerja_id')->constrained('unit_kerjas')->nullable();
-            $table->foreignId('jabatan_id')->constrained('jabatans')->nullable();
-            $table->foreignId('kompetensi_id')->constrained('kompetensis')->nullable();
+            $table->foreignId('unit_kerja_id')->nullable()->constrained('unit_kerjas');
+            $table->foreignId('jabatan_id')->nullable()->constrained('jabatans');
+            $table->foreignId('kompetensi_id')->nullable()->constrained('kompetensis');
 
-            $table->integer('tunjangan_jabatan')->nullable();
+            // $table->integer('tunjangan_jabatan')->nullable();
             $table->integer('tunjangan_fungsional')->nullable();
             $table->integer('tunjangan_khusus')->nullable();
             $table->integer('tunjangan_lainnya')->nullable();
@@ -43,15 +43,9 @@ return new class extends Migration
             $table->integer('masa_kerja')->nullable();
             $table->string('npwp', 50)->nullable();
             $table->string('no_rekening', 50)->nullable();
-
             $table->boolean('jenis_kelamin')->nullable();
-
-            // $table->string('agama', 50)->nullable();
             $table->foreignId('kategori_agama_id')->nullable()->constrained('kategori_agamas');
-
-            // $table->string('golongan_darah', 50)->nullable();
             $table->foreignId('kategori_darah_id')->nullable()->constrained('kategori_darahs');
-            
             $table->integer('tinggi_badan')->nullable();
             $table->integer('berat_badan')->nullable();
             // $table->enum('pendidikan_terakhir', ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'D4', 'S1', 'S2', 'S3'])->nullable();
@@ -59,10 +53,7 @@ return new class extends Migration
             $table->string('no_ijazah')->nullable();
             $table->integer('tahun_lulus')->nullable();
             $table->string('no_kk', 20)->nullable();
-
-            // $table->string('status_karyawan', 50)->nullable();
             $table->foreignId('status_karyawan_id')->nullable()->constrained('status_karyawans'); // Tetap, Kontrak, Magang
-
             $table->foreignId('kelompok_gaji_id')->nullable()->constrained('kelompok_gajis');
             $table->string('no_str', 16)->nullable();
             $table->string('masa_berlaku_str')->nullable();
@@ -71,6 +62,7 @@ return new class extends Migration
             $table->foreignId('ptkp_id')->nullable()->constrained('ptkps');
             $table->string('tgl_berakhir_pks')->nullable();
             $table->integer('masa_diklat')->nullable();
+            $table->foreignId('verifikator_1')->nullable()->constrained('users');
             $table->timestamps();
         });
     }
