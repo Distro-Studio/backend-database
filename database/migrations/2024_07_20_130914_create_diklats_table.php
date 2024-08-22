@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('diklats', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar')->nullable();
+            $table->foreignId('gambar')->nullable()->constrained('berkas');
+            $table->foreignId('dokumen_eksternal')->nullable()->constrained('berkas');
             $table->string('nama');
-            $table->foreignId('kategori_diklat_id')->constrained('kategori_diklats');
+            $table->foreignId('kategori_diklat_id')->constrained('kategori_diklats'); // 1 = Internal 2 = Eksternal
             $table->foreignId('status_diklat_id')->constrained('status_diklats');
             $table->string('deskripsi');
             $table->integer('kuota');
@@ -25,6 +26,9 @@ return new class extends Migration
             $table->string('jam_selesai');
             $table->integer('durasi');
             $table->string('lokasi');
+            $table->foreignId('verifikator_1')->nullable()->constrained('users');
+            $table->foreignId('verifikator_2')->nullable()->constrained('users');
+            $table->text('alasan')->nullable();
             $table->timestamps();
         });
     }
